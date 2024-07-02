@@ -37,8 +37,90 @@
   .li {
     text-transform: capitalize !important;
   }
-</style>
 
+    .tech-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff;
+        width: 100%;
+        margin: auto;
+    }
+    .tech-item {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    .tech-item img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    .tech-item:hover {
+        background-color: #f0f0f0;
+    }
+
+     .module-container {
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+        .module-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+        .module-item:hover {
+            background-color: #f0f0f0;
+        }
+        .module-content {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-top: 1px solid #ccc;
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out;
+        }
+        .module-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    
+</style>
+<script>
+        function toggleModuleContent(id) {
+            const allContents = document.querySelectorAll('.module-content');
+            allContents.forEach(content => {
+                if (content.id === id) {
+                    if (content.style.display === "block") {
+                        content.style.opacity = "0";
+                        setTimeout(() => {
+                            content.style.display = "none";
+                        }, 600);
+                    } else {
+                        content.style.display = "block";
+                        setTimeout(() => {
+                            content.style.opacity = "1";
+                        }, 10);
+                    }
+                } else {
+                    content.style.opacity = "0";
+                    setTimeout(() => {
+                        content.style.display = "none";
+                    }, 600);
+                }
+            });
+        }
+    </script>
 <body>
   <!-- ================ Start Header Area ================= -->
   <header class="default-header">
@@ -127,13 +209,15 @@
     </section>
     <!-- ================ End banner Area ================= -->
 
+
+
     <!--================ Start Course Details Area =================-->
     <section class="course-details-area section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 course-details-left">
                     <div class="main-image">
-                        <img class="img-fluid" src="img/courses/frontend1.png" alt="frontend" style="width:80%;">
+                        <img class="img-fluid" src="img/data_analysis2.jpeg" alt="data analysis" style="width:80%;">
                     </div>
                     <div class="content-wrapper">
                         <h4 class="title">Objectives</h4>
@@ -159,52 +243,110 @@
                             </ul>
                         </div>
 
-                        <h4 class="title">Course Outline</h4>
-                        <div class="content">
-                            <ul class="course-list">
-                                <li class="justify-content-between d-flex">
-                                    <p> Introduction to Data Analytics with Python</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Python Fundamentals</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Functions in Python: Creating and Using Functions</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Object-Oriented Programming (OOP) in Python</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>File Handling in Python: Reading and Writing Files</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Python Libraries for Data Analysis - NumPy and Pandas</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Data Visualization with Matplotlib and Seaborn</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Introduction to SQL</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Advanced Data Analysis with Pandas</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Data Visualization and Dashboarding with Power BI</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li> 
-
-                            </ul>
+                        <br>
+                        
+                        <h4 class="title">Technologies</h4>
+                        <div class="tech-container container">
+                            <div class="tech-item">
+                                <img src="img/excel.jpeg" alt="Excel">
+                                <div>Excel</div>
+                            </div>
+                            <div class="tech-item">
+                                <img src="img/sql.jpeg" alt="SQL">
+                                <div>SQL</div>
+                            </div>
+                            <div class="tech-item">
+                                <img src="img/python.jpeg" alt="Python">
+                                <div>Python</div>
+                            </div>
+                            <div class="tech-item">
+                                <img src="img/powerbi.jpeg" alt="Power BI">
+                                <div>Power BI</div>
+                            </div>
                         </div>
+
+                        <br>
+                        <h4>Program Outline</h4>
+                        <div class="module-container">
+        <div class="module-item" onclick="toggleModuleContent('excel-content')">
+            Module 1: Excel
+        </div>
+        <div id="excel-content" class="module-content">
+            <h3>Excel Topics</h3>
+            <ul>
+                <li>Introduction to Data Analysis and Excel Basics</li>
+                <li>Data Entry and Formatting</li>
+                <li>Basic Formulas and Functions</li>
+                <li>Data Manipulation: Sorting and Filtering</li>
+                <li>PivotTables and PivotCharts</li>
+                <li>Advanced Formulas: VLOOKUP, HLOOKUP, INDEX, and MATCH</li>
+                <li>Data Validation and What-If Analysis</li>
+                <li>Creating and Customizing Charts</li>
+                <li>Using Sparklines</li>
+            </ul>
+        </div>
+
+        <div class="module-item" onclick="toggleModuleContent('sql-content')">
+            Module 2: SQL
+        </div>
+        <div id="sql-content" class="module-content">
+            <h3>SQL Topics</h3>
+            <ul>
+                <li>Introduction to Databases and SQL</li>
+                <li>Basic SQL Commands: SELECT, FROM, WHERE</li>
+                <li>Data Retrieval: DISTINCT, ORDER BY, LIMIT</li>
+                <li>Joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN</li>
+                <li>Writing and Using Subqueries</li>
+                <li>Aggregating Data: GROUP BY, HAVING</li>
+                <li>Aggregate Functions: COUNT, SUM, AVG, MIN, MAX</li>
+                <li>Using CASE Statements</li>
+                <li>Window Functions: ROW_NUMBER, RANK, PARTITION BY</li>
+                <li>Creating and Managing Tables</li>
+                <li>Indexes and Performance Tuning</li>
+            </ul>
+        </div>
+
+        <div class="module-item" onclick="toggleModuleContent('python-content')">
+            Module 3: Python
+        </div>
+        <div id="python-content" class="module-content">
+            <h3>Python Topics</h3>
+            <ul>
+                <li>Introduction to Python Programming</li>
+                <li>Data Types, Variables, and Basic Operations</li>
+                <li>Data Structures: Lists, Tuples, Dictionaries, and Sets</li>
+                <li>Introduction to Pandas and NumPy</li>
+                <li>DataFrames: Creation, Indexing, and Slicing</li>
+                <li>Data Cleaning and Preprocessing</li>
+                <li>Aggregating and Grouping Data</li>
+                <li>Merging and Joining Data Sets</li>
+                <li>Introduction to Matplotlib and Seaborn</li>
+                <li>Creating Various Types of Plots</li>
+            </ul>
+        </div>
+
+        <div class="module-item" onclick="toggleModuleContent('powerbi-content')">
+            Module 4: Power BI
+        </div>
+        <div id="powerbi-content" class="module-content">
+            <h3>Power BI Topics</h3>
+            <ul>
+                <li>Overview of Power BI Interface</li>
+                <li>Connecting to Data Sources</li>
+                <li>Using Power Query Editor</li>
+                <li>Data Cleaning and Shaping</li>
+                <li>Creating and Customizing Visuals</li>
+                <li>Different Types of Visuals in Power BI</li>
+                <li>Creating Interactive Dashboards</li>
+                <li>Publishing and Sharing Reports</li>
+                <li>Introduction to DAX</li>
+                <li>Creating Calculated Columns and Measures</li>
+                <li>Using Power BI's Analytics Features</li>
+                <li>Implementing Advanced Data Visualization Techniques</li>
+            </ul>
+        </div>
+    </div>
+
                     </div>
                 </div>
 
@@ -213,26 +355,26 @@
                     <ul>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Course Name</p>
+                                <p class="or">Course Name:</p>
                                 <span class="or">Data Analytics</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Course Fee </p>
-                                <span>N45,000</span>
+                                <p class="or">Course Fee:</p>
+                                <span class="or">N150,000</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Duration </p>
-                                <span>13 Weeks</span>
+                                <p class="or">Duration:</p>
+                                <span class="or">13 Weeks</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Date </p>
-                                <span>4th of Mar, 2024</span>
+                                <p class="or">Date:</p>
+                                <span class="or">29/07/2024</span>
                             </a>
                         </li>
                         <!-- <li>
@@ -243,12 +385,12 @@
                         </li> -->
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Mode </p>
-                                <span>Virtual</span>
+                                <p class="or">Mode: </p>
+                                <span class="or">Virtual & Physical</span>
                             </a>
                         </li>
                     </ul>
-                    <a href="https://paystack.com/pay/sodbridgeacademy" class="btn text-uppercase enroll">Reserve my seat</a>
+                    <a href="https://forms.gle/qDrV7eb79sg7GWbF8" class="btn text-uppercase enroll">Register Now</a>
 
 <!--                     <h4 class="title">Reviews</h4>
                     <div class="content">
@@ -374,8 +516,9 @@
                     </div> -->
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
+
     <!--================ End Course Details Area =================-->
 
     <!-- Whats App Icon -->

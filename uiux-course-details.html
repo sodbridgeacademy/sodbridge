@@ -37,7 +37,89 @@
   .li {
     text-transform: capitalize !important;
   }
+      .tech-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background-color: #fff;
+        width: 100%;
+        margin: auto;
+    }
+    .tech-item {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    .tech-item img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    .tech-item:hover {
+        background-color: #f0f0f0;
+    }
+
+     .module-container {
+            width: 100%;
+            margin: auto;
+            padding: 20px;
+        }
+        .module-item {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+        }
+        .module-item:hover {
+            background-color: #f0f0f0;
+        }
+        .module-content {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            border-top: 1px solid #ccc;
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out;
+        }
+        .module-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
 </style>
+<script>
+        function toggleModuleContent(id) {
+            const allContents = document.querySelectorAll('.module-content');
+            allContents.forEach(content => {
+                if (content.id === id) {
+                    if (content.style.display === "block") {
+                        content.style.opacity = "0";
+                        setTimeout(() => {
+                            content.style.display = "none";
+                        }, 600);
+                    } else {
+                        content.style.display = "block";
+                        setTimeout(() => {
+                            content.style.opacity = "1";
+                        }, 10);
+                    }
+                } else {
+                    content.style.opacity = "0";
+                    setTimeout(() => {
+                        content.style.display = "none";
+                    }, 600);
+                }
+            });
+        }
+    </script>
+
 
 <body>
   <!-- ================ Start Header Area ================= -->
@@ -165,51 +247,49 @@
                             </ul>
                         </div>
 
-                        <h4 class="title">Course Outline</h4>
-                        <div class="content">
-                            <ul class="course-list">
-                                <li class="justify-content-between d-flex">
-                                    <p>Introduction to UI/UX Design</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>User Research and Personas</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Wireframing and Prototyping</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Visual Design Principles</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Principles of interaction design</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Usability Testing and Iteration</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Design Systems and Collaboration</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Collaborative design tools and techniques</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                <li class="justify-content-between d-flex">
-                                    <p>Developing a portfolio showcasing projects</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
-                                 <li class="justify-content-between d-flex">
-                                    <p>Final Project and Showcase</p>
-                                    <!-- <a class="btn text-uppercase" href="#">View Details</a> -->
-                                </li>
+                        <br>
+                        
+                        <h4 class="title">Technologies</h4>
+                        <div class="tech-container container">
+                            <div class="tech-item">
+                                <img src="img/figma.jpeg" alt="Excel">
+                                <div>Figma</div>
+                            </div>
+                            <div class="tech-item">
+                                <img src="img/sql.jpeg" alt="SQL">
+                                <div>SQL</div>
+                            </div>
+<!--                             <div class="tech-item">
+                                <img src="img/python.jpeg" alt="Python">
+                                <div>Python</div>
+                            </div>
+                            <div class="tech-item">
+                                <img src="img/powerbi.jpeg" alt="Power BI">
+                                <div>Power BI</div>
+                            </div> -->
+                        </div> <br>
 
-                            </ul>
+                        <h4 class="title">Program Outline</h4>
+                        <div class="module-container">
+                            <div class="module-item" onclick="toggleModuleContent('excel-content')">
+                                Module 1: UI/UX
+                            </div>
+                            <div id="excel-content" class="module-content">
+                                <h3>Figma Topics</h3>
+                                <ul>
+                                    <li>Introduction to UI/UX Design</li>
+                                    <li>User Research and Personas</li>
+                                    <li>Wireframing and Prototyping</li>
+                                    <li>Visual Design Principles</li>
+                                    <li>Principles of interaction design</li>
+                                    <li>Usability Testing and Iteration</li>
+                                    <li>Design Systems and Collaboration</li>
+                                    <li>Collaborative design tools and techniques</li>
+                                    <li>Developing a portfolio showcasing projects</li>
+                                    <li>Developing a portfolio showcasing projects</li>
+                                    <li>Final Project and Showcase</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,42 +299,42 @@
                     <ul>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Course Name</p>
+                                <p class="or">Course Name:</p>
                                 <span class="or">UI/UX</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Course Fee </p>
-                                <span>N40,000</span>
+                                <p class="or">Course Fee:</p>
+                                <span class="or">N100,000</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Duration </p>
-                                <span>13 Weeks</span>
+                                <p class="or">Duration:</p>
+                                <span class="or">13 Weeks</span>
                             </a>
                         </li>
                         <li>
+                            <a class="justify-content-between d-flex" href="#">
+                                <p class="or">Date:</p>
+                                <span class="or">29/07/2024</span>
+                            </a>
+                        </li>
+                        <!-- <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Date </p>
-                                <span>22nd of April, 2024</span>
-                            </a>
-                        </li>
-<!--                         <li>
-                            <a class="justify-content-between d-flex" href="#">
-                                <p>Date</p>
                                 <span>29/01/2024</span>
                             </a>
                         </li> -->
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Mode </p>
-                                <span>Virtual</span>
+                                <p class="or">Mode: </p>
+                                <span class="or">Virtual & Physical</span>
                             </a>
                         </li>
                     </ul>
-                    <a href="https://paystack.com/pay/sodbridgeacademy" class="btn text-uppercase enroll">Reserve my seat</a>
+                    <a href="https://forms.gle/qDrV7eb79sg7GWbF8" class="btn text-uppercase enroll">Register Now</a>
 
 <!--                     <h4 class="title">Reviews</h4>
                     <div class="content">
