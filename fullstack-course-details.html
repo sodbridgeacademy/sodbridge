@@ -94,6 +94,57 @@
             list-style-type: disc;
             padding-left: 20px;
         }
+
+        /* Base styles for tech items */
+.tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 16px; /* Space between items */
+}
+
+.tech-item {
+    flex: 1 1 150px; /* Flex grow and shrink with a base width of 150px */
+    max-width: 200px; /* Maximum width for each item */
+    text-align: center; /* Center text */
+    padding: 10px; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.tech-item img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+.tech-item div {
+    margin-top: 8px; /* Space between image and text */
+    font-weight: bold; /* Bold text */
+}
+
+/* Hover effect */
+.tech-item:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Media Queries for different screen sizes */
+@media (max-width: 768px) {
+    .tech-item {
+        flex: 1 1 100px; /* Adjust base width on smaller screens */
+        max-width: 150px; /* Adjust maximum width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-item {
+        flex: 1 1 100%; /* Full width on very small screens */
+        max-width: 100%; /* Full width on very small screens */
+    }
+}
+
 </style>
 
 <script>
@@ -246,7 +297,7 @@
                         <br>
                         
                         <h4 class="title">Technologies</h4>
-                        <div class="tech-container container">
+                        <div class="tech-container container-fluid">
                             <div class="tech-item">
                                 <img src="img/courses/jspic.jpeg" alt="Javascript">
                                 <div>Javascript</div>
@@ -271,7 +322,6 @@
                                 <img src="img/courses/aws_pic.jpeg" alt="AWS">
                                 <div>AWS</div>
                             </div>
-
                         </div>
 
                         <br>
