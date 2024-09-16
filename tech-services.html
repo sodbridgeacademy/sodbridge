@@ -36,7 +36,119 @@
   .li {
     text-transform: capitalize !important;
   }
+
+  /* Container and Grid */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Service Item */
+.service-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item h3 {
+    font-size: 24px;
+/*    color: #007bff;*/
+		color: #333;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.service-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-item ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.service-item ul li:before {
+    content: "✔";
+    color: #007bff;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Hover Effect */
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-section {
+        text-align: center;
+        background-color: #6f42c1;
+        padding: 50px 0;
+    }
+    .cta-section h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .cta-section p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #333;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #fff;
+    }
+
 </style>
+
+<script type="text/javascript">
+	// Optional: Add animations for entry
+document.addEventListener('DOMContentLoaded', () => {
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    serviceItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, index * 100);  // Adds a slight delay for each item for a staggered effect
+    });
+});
+
+</script>
 
 <body>
   <!-- ================ Start Header Area ================= -->
@@ -56,7 +168,7 @@
             <li><a class="li" href="index.html">Home</a></li>
             <li><a class="li" href="about.html">About</a></li>
             <li><a class="li" href="courses.html">Courses</a></li>
-            <li><a class="li" href="tech-services.html">Tech Services</a></li>
+            <li><a class="li" href="tech-services.html">For Business Clients</a></li>
             <!-- <li><a class="li" href="blog-home.html">Blog</a></li> -->
             <!-- Dropdown -->
             <!-- <li class="dropdown">
@@ -136,105 +248,115 @@
 	</section>
 	<!-- End Sample Area -->
 
-	<!-- Start Button -->
-	<section class="button-area">
-		<div class="container border-top-generic">
-			<h3 class="text-heading genric-btn primary">Software Development</h3>
-			<div class="button-group-area">
-				<p>
-					In order to help organizations succeed in the digital era, Sodbridge specializes in providing unique software solutions. With extensive experience in a variety of technologies and platforms, our team of seasoned software engineers can design solutions that specifically address the opportunities and difficulties you face.
+	<!-- Start Services Section -->
 
-					To guarantee the success of your project, we adhere to a thorough development approach for both web apps and enterprise software: 
-				
-					<li>
-						<b>Discovery and Planning:</b> We start by getting to know your demands and business objectives. We then carry out in-depth research to find the best possible solution.
-					</li>
-					<li>
-						<b>Design and Prototyping:</b> Our designers construct working prototypes to test ideas and get input, while our designers collaborate directly with you to produce user-friendly, aesthetically pleasing interfaces.
-					</li>
-					<li>
-						<b>Agile Development:</b> To ensure that your project stays on track and generates value at every stage, we use agile approaches that foster cooperation and adaptation throughout the development process.
-					</li>
-					<li>
-						<b>Quality Assurance:</b> Before deployment, our committed QA team conducts thorough testing to find and fix any problems, ensuring that your product operates flawlessly on all platforms and devices.
-					</li>
-					<li>
-						<b>Deployment and Support:</b> We take care of the deployment procedure and offer continuous maintenance and support to make sure your software is safe, dependable, and up to date.
-					</li>
-						<br>
-						Whether you're looking to streamline internal operations, enhance customer engagement, or innovate new products and services, we have the expertise and resources to bring your vision to life.
-				</p>
-				
-			</div>
+	<section class="services-section">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
 
-			<h3 class="text-heading genric-btn success">Data Analytics</h3>
-			<div class="button-group-area">
-				<p>
-					Unlock the full potential of your data with [Your Company Name]'s advanced analytics solutions. In today's data-driven world, businesses that harness the power of data analytics gain a competitive edge by making informed decisions, optimizing processes, and uncovering valuable insights. <br>
+            <!-- Software Development -->
+            <div class="service-item">
+                <h3>Software Development</h3>
+                <p>
+                    Sodbridge specializes in providing unique software solutions to help organizations succeed in the digital era.
+                    Our services include:
+                </p>
+                <ul>
+                    <li><b>Discovery and Planning:</b> Understanding your demands and business objectives.</li>
+                    <li><b>Design and Prototyping:</b> Testing ideas with user-friendly, aesthetically pleasing interfaces.</li>
+                    <li><b>Agile Development:</b> Using agile approaches for cooperation and adaptability.</li>
+                    <li><b>Quality Assurance:</b> Thorough testing to ensure flawless performance on all platforms.</li>
+                    <li><b>Deployment and Support:</b> Continuous maintenance and support post-deployment.</li>
+                </ul>
+            </div>
 
-					Our team of data scientists and analysts specializes in turning raw data into actionable intelligence, helping you extract meaningful insights and drive strategic growth. We offer a comprehensive suite of data analytics services tailored to meet the unique needs of your organization:
+            <!-- Data Analytics -->
+            <div class="service-item">
+                <h3>Data Analytics</h3>
+                <p>
+                    Unlock the full potential of your data with Sodbridge's advanced analytics solutions, transforming raw data into actionable intelligence:
+                </p>
+                <ul>
+                    <li><b>Data Collection & Preparation:</b> Gathering and organizing data from various sources.</li>
+                    <li><b>Descriptive Analytics:</b> Summarizing and interpreting historical data.</li>
+                    <li><b>Predictive Analytics:</b> Forecasting future trends using machine learning algorithms.</li>
+                    <li><b>Prescriptive Analytics:</b> Offering actionable recommendations for decision-making.</li>
+                    <li><b>Data Visualization:</b> Creating intuitive dashboards and reports for stakeholder insight.</li>
+                </ul>
+            </div>
 
-					<li>
-						<b>Data Collection & Preparation:</b> We help you gather and organize data from various sources, ensuring accuracy, consistency, and relevance.
-					</li>
-					<li>
-						<b>Descriptive Analytics:</b> Our analysts use descriptive techniques to summarize and interpret historical data, providing valuable context and understanding of past trends and patterns.
-					</li>
-					<li>
-						<b>Predictive Analytics:</b> Leveraging advanced statistical models and machine learning algorithms, we forecast future trends and outcomes, empowering you to anticipate opportunities and mitigate risks.
-					</li>
-					<li>
-						<b>Prescriptive Analytics:</b> By combining data analysis with domain expertise, we offer actionable recommendations and strategies to optimize decision-making and drive positive outcomes.
-					</li>
-					<li>
-						<b>Data Visualization and Reporting:</b> We create intuitive dashboards and reports that transform complex data into compelling visualizations, enabling stakeholders to understand and act on insights effectively.
-					</li> <br>
+            <!-- Mobile Apps -->
+            <div class="service-item">
+                <h3>Mobile Apps</h3>
+                <p>
+                    Sodbridge crafts cutting-edge mobile applications for businesses. Our services include:
+                </p>
+                <ul>
+                    <li><b>Strategic Planning:</b> Defining clear goals and aligning them with your business objectives.</li>
+                    <li><b>User-Centric Design:</b> Creating visually appealing, intuitive interfaces.</li>
+                    <li><b>Custom Development:</b> Building scalable mobile apps using the latest technologies.</li>
+                    <li><b>Quality Assurance:</b> Testing for seamless app functionality across devices.</li>
+                    <li><b>Deployment and Support:</b> Ensuring smooth deployment and continuous support.</li>
+                </ul>
+            </div>
 
-					Sodbridge is your go-to partner for data analytics solutions, whether you're trying to boost customer satisfaction, increase operational effectiveness, or spur creativity. To find out how we can assist you in utilizing data to accomplish your company goals, get in touch with us right now.
-				</p>
-			</div>
+            <!-- IT Trainings/Consultancy -->
+            <div class="service-item">
+                <h3>IT Trainings/Consultancy</h3>
+                <p>
+                    Empower your team with Sodbridge’s comprehensive training and consultancy services, offering:
+                </p>
+                <ul>
+                    <li>Upskilling programs for your employees across various IT domains.</li>
+                    <li>Optimizing IT infrastructure to streamline operations and boost efficiency.</li>
+                    <li>Expert consultancy services to navigate complex technology challenges.</li>
+                </ul>
+            </div>
 
-			<h3 class="text-heading genric-btn warning">Mobile Apps</h3>
-			<div class="button-group-area">
-				<p>
-					At Sodbridge, we specialize in crafting cutting-edge mobile applications tailored to meet the unique needs of your business. Our team of experienced developers is adept at leveraging the latest technologies and industry best practices to deliver high-quality mobile solutions that drive engagement and enhance user experience.
+            <!-- Website Design -->
+            <div class="service-item">
+                <h3>Website Designs</h3>
+                <p>
+                We offer creative and responsive website design solutions to help your business stand out. From wireframing to full-stack development, our team delivers user-friendly and high-performance websites.
+	            </p>
+	            <ul>
+	                <li><b>UI/UX Design:</b> Crafting visually appealing and intuitive user interfaces.</li>
+	                <li><b>Custom Web Development:</b> Scalable and feature-rich websites.</li>
+	                <li><b>Responsive Design:</b> Optimized for mobile, tablet, and desktop devices.</li>
+	                <li><b>SEO Optimization:</b> Ensuring your website ranks well on search engines.</li>
+	            </ul>
+            </div>
 
-					From conceptualization to deployment, we work closely with our clients to understand their objectives and transform their vision into a functional and visually stunning mobile app. Whether you need a native iOS, Android, or cross-platform app, we have the expertise to bring your ideas to life.
+            <!-- Digital Marketing/Social Media Management -->
+	        <div class="service-item">
+	            <h3>Digital Marketing & Social Media Management</h3>
+	            <p>
+	                Boost your online presence with our tailored digital marketing services. Our social media management strategies help you engage with your audience and grow your brand.
+	            </p>
+	            <ul>
+	                <li><b>Social Media Strategy:</b> Tailored strategies to grow your presence.</li>
+	                <li><b>Content Creation:</b> Engaging content for your target audience.</li>
+	                <li><b>SEO & SEM:</b> Optimize your website and ads for search engines.</li>
+	                <li><b>Analytics and Reporting:</b> Measure your digital marketing ROI.</li>
+	            </ul>
+	        </div>
 
-					Our mobile app development services include:
+        </div>
+    </div>
+</section>
+	<!-- End Services Section -->
 
-					<li>
-						<b>Strategic Planning:</b> We collaborate with you to define clear goals and objectives for your mobile app, ensuring alignment with your business objectives.
-					</li>
-					<li>
-						<b>User-Centric Design:</b> Our designers create intuitive and visually appealing interfaces that prioritize user experience and engagement.	
-					</li>
-					<li>
-						<b>Custom Development:</b> Using the latest technologies and frameworks, our developers build robust and scalable mobile applications that meet your specific requirements.
-					</li>
-					<li>
-						<b>Quality Assurance:</b> We conduct rigorous testing to ensure your app functions flawlessly across devices and platforms, delivering a seamless user experience.
-					</li>
-					<li>
-						<b>Deployment and Support:</b> We handle the deployment process and provide ongoing support and maintenance to keep your app running smoothly and up-to-date
-					</li>
-						Partner with us to transform your ideas into innovative mobile solutions that drive growth and success for your business
-				</p>
-			</div>
+	<!-- Business Client Section -->
+	<section class="cta-section">
+    <div class="container">
+        <h2>Get Started with Sodbridge Today</h2>
+        <p>Are you ready to elevate your business with our services? Fill out our business client form to get started!</p>
+        <a href="https://forms.gle/7YPPmYkGySDMHEfv5" class="cta-button btn-default text-uppercase" target="_blank">Send Us a Message</a>
+    </div>
+</section>
+<!-- End Business Client Section -->
 
-			<h3 class="text-heading genric-btn info">IT Trainings/Consultancy</h3>
-			<div class="button-group-area">
-				<p>
-					Empower your team with the knowledge and skills they need to excel in today's dynamic IT landscape with Sodbridge comprehensive training and consultancy services. Whether you're looking to upskill your employees, optimize your IT infrastructure, or navigate complex technology challenges, we have the expertise and resources to support your goals.
-
-					Our IT training programs are designed to equip participants with practical skills and industry-relevant knowledge that they can apply directly to their roles. From beginner-level courses to advanced certifications, we offer a wide range of training options tailored to meet the needs of individuals and organizations across various domains of IT. <br>
-
-					In addition to training, we provide expert consultancy services to help you optimize your IT strategy, streamline operations, and achieve your business objectives. Our experienced consultants work closely with your team to assess your current IT infrastructure, identify areas for improvement, and develop tailored solutions that align with your goals and budget.
-				</p>
-			</div>
-		</div>
-	</section>
-	<!-- End Button -->
 
 	<!-- Whats App Icon -->
   <script async src='https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.js'></script>

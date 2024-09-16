@@ -94,33 +94,34 @@
             list-style-type: disc;
             padding-left: 20px;
         }
-    
 </style>
+
 <script>
-        function toggleModuleContent(id) {
-            const allContents = document.querySelectorAll('.module-content');
-            allContents.forEach(content => {
-                if (content.id === id) {
-                    if (content.style.display === "block") {
-                        content.style.opacity = "0";
-                        setTimeout(() => {
-                            content.style.display = "none";
-                        }, 600);
-                    } else {
-                        content.style.display = "block";
-                        setTimeout(() => {
-                            content.style.opacity = "1";
-                        }, 10);
-                    }
-                } else {
+    function toggleModuleContent(id) {
+        const allContents = document.querySelectorAll('.module-content');
+        allContents.forEach(content => {
+            if (content.id === id) {
+                if (content.style.display === "block") {
                     content.style.opacity = "0";
                     setTimeout(() => {
                         content.style.display = "none";
                     }, 600);
+                } else {
+                    content.style.display = "block";
+                    setTimeout(() => {
+                        content.style.opacity = "1";
+                    }, 10);
                 }
-            });
-        }
-    </script>
+            } else {
+                content.style.opacity = "0";
+                setTimeout(() => {
+                    content.style.display = "none";
+                }, 600);
+            }
+        });
+    }
+</script>
+
 <body>
   <!-- ================ Start Header Area ================= -->
   <header class="default-header">
@@ -192,7 +193,7 @@
                         Course Details
                     </h1>
                     <p class="mx-auto text-white  mt-20 mb-40">
-                        Uncover insights, trends, and drive decisions with precision in our Data Analytics Bootcamp
+                        Dive into the core of frontend designs, systems, databases, and server logic in our Fullstack Development Bootcamp
                     </p>
                     <div class="link-nav">
                         <span class="box">
@@ -209,144 +210,144 @@
     </section>
     <!-- ================ End banner Area ================= -->
 
-
-
     <!--================ Start Course Details Area =================-->
     <section class="course-details-area section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 course-details-left">
                     <div class="main-image">
-                        <img class="img-fluid" src="img/data_analysis2.jpeg" alt="data analysis" style="width:80%;">
+                        <img class="img-fluid" src="img/courses/softwaredev.jpeg" alt="backend" style="width:80%; height: 280px;">
                     </div>
                     <div class="content-wrapper">
                         <h4 class="title">Objectives</h4>
                         <div class="content">
-                            Empower students with data wrangling, analysis, and visualization skills, utilizing tools like Python, SQL, and statistical methods to derive actionable insights and make data-driven decisions.
+                            Immerse students in the world of full stack development, covering both frontend and backend technologies. The frontend will focus on JavaScript (React.js), while the backend will use Python (Django REST framework). Students will learn to architect complete systems, build user interfaces, create robust APIs, manage databases, and develop scalable, secure full stack applications.
                             <br>
                             <br>
-                            Enable students to master data analysis and visualization techniques using Python, SQL, and Power BI, encompassing data cleaning, creation of data dashboards, visualization of insights, and leveraging Python for comprehensive data analysis and manipulation.
+                            Equip students with hands-on experience in React for building dynamic, responsive user interfaces and Django REST Framework for developing powerful, scalable backend APIs. By the end of the course, students will have the skills to build, deploy, and maintain full stack web applications.
                         </div>
 
                         <h4 class="title">Eligibility</h4>
                         <div class="content">
                             <ul>
                                 <li>
-                                    No Prior Experience Required: Open to beginners without prior data analytics or coding experience but with a keen interest in data-driven insights.
+                                    <strong>Basic Programming Knowledge:</strong> While prior programming experience is not mandatory, familiarity with basic coding concepts or languages such as HTML, CSS, and basic JavaScript will be helpful.
                                 </li>
                                 <li>
-                                    Analytical Mindset: Ideal for students or fresh graduates curious about analyzing data, storytelling with data, and making informed decisions.
+                                    <strong>Interest in Full Stack Development:</strong> Ideal for individuals eager to learn both frontend and backend technologies. Suitable for those wanting to work with JavaScript (React.js) for the frontend and Python (Django REST Framework) for backend development.
                                 </li>
                                 <li>
-                                   Transitioning to Tech or Data Roles: Suitable for individuals aspiring to pivot their careers toward tech or data-focused roles, offering foundational skills in data analytics.
+                                    <strong>Career Transition to Tech:</strong> Perfect for career switchers looking to break into tech or recent graduates aiming to specialize in full stack development. The course offers a comprehensive path from understanding basic programming concepts to mastering full stack applications.
                                 </li>
                             </ul>
                         </div>
+
 
                         <br>
                         
                         <h4 class="title">Technologies</h4>
                         <div class="tech-container container">
                             <div class="tech-item">
-                                <img src="img/excel.jpeg" alt="Excel">
-                                <div>Excel</div>
+                                <img src="img/courses/jspic.jpeg" alt="Javascript">
+                                <div>Javascript</div>
                             </div>
                             <div class="tech-item">
-                                <img src="img/sql.jpeg" alt="SQL">
-                                <div>SQL</div>
+                                <img src="img/courses/React_pic.png" alt="React">
+                                <div>React</div>
+                            </div>
+                            <div class="tech-item">
+                                <img src="img/courses/git_pic.png" alt="Git">
+                                <div>Git</div>
                             </div>
                             <div class="tech-item">
                                 <img src="img/python.jpeg" alt="Python">
                                 <div>Python</div>
                             </div>
                             <div class="tech-item">
-                                <img src="img/powerbi.jpeg" alt="Power BI">
-                                <div>Power BI</div>
+                                <img src="img/courses/drf_pic.png" alt="DRF">
+                                <div>DRF</div>
                             </div>
+                            <div class="tech-item">
+                                <img src="img/courses/aws_pic.jpeg" alt="AWS">
+                                <div>AWS</div>
+                            </div>
+
                         </div>
 
                         <br>
+
                         <h4>Program Outline</h4>
-                        <div class="module-container">
-                            <div class="module-item" onclick="toggleModuleContent('excel-content')">
-                                Module 1: Excel
-                            </div>
-                            <div id="excel-content" class="module-content">
-                                <h3>Excel Topics</h3>
-                                <ul>
-                                    <li>Introduction to Data Analysis and Excel Basics</li>
-                                    <li>Data Entry and Formatting</li>
-                                    <li>Basic Formulas and Functions</li>
-                                    <li>Data Manipulation: Sorting and Filtering</li>
-                                    <li>PivotTables and PivotCharts</li>
-                                    <li>Advanced Formulas: VLOOKUP, HLOOKUP, INDEX, and MATCH</li>
-                                    <li>Data Validation and What-If Analysis</li>
-                                    <li>Creating and Customizing Charts</li>
-                                    <li>Using Sparklines</li>
-                                </ul>
-                            </div>
+<div class="module-container">
+    <!-- Frontend Modules -->
+    <div class="module-item" onclick="toggleModuleContent('frontend-content')">
+        Module 1: Frontend Development with JavaScript and React
+    </div>
+    <div id="frontend-content" class="module-content">
+        <h3>Frontend Topics</h3>
+        <ul>
+            <li>Introduction to Web Development and HTML/CSS</li>
+            <li>JavaScript Basics: Variables, Functions, and Control Structures</li>
+            <li>DOM Manipulation and Event Handling</li>
+            <li>Introduction to React.js</li>
+            <li>React Components, Props, and State</li>
+            <li>React Lifecycle Methods and Hooks</li>
+            <li>Routing with React Router</li>
+            <li>State Management with Redux (or Context API)</li>
+            <li>Building and Deploying React Applications</li>
+        </ul>
+    </div>
 
-                            <div class="module-item" onclick="toggleModuleContent('sql-content')">
-                                Module 2: SQL
-                            </div>
-                            <div id="sql-content" class="module-content">
-                                <h3>SQL Topics</h3>
-                                <ul>
-                                    <li>Introduction to Databases and SQL</li>
-                                    <li>Basic SQL Commands: SELECT, FROM, WHERE</li>
-                                    <li>Data Retrieval: DISTINCT, ORDER BY, LIMIT</li>
-                                    <li>Joins: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN</li>
-                                    <li>Writing and Using Subqueries</li>
-                                    <li>Aggregating Data: GROUP BY, HAVING</li>
-                                    <li>Aggregate Functions: COUNT, SUM, AVG, MIN, MAX</li>
-                                    <li>Using CASE Statements</li>
-                                    <li>Window Functions: ROW_NUMBER, RANK, PARTITION BY</li>
-                                    <li>Creating and Managing Tables</li>
-                                    <li>Indexes and Performance Tuning</li>
-                                </ul>
-                            </div>
+    <!-- Backend Modules -->
+    <div class="module-item" onclick="toggleModuleContent('backend-content')">
+        Module 2: Backend Development with Python and Django REST Framework
+    </div>
+    <div id="backend-content" class="module-content">
+        <h3>Backend Topics</h3>
+        <ul>
+            <li>Introduction to Python Programming</li>
+            <li>Setting Up a Django Project</li>
+            <li>Database Models and Migrations</li>
+            <li>Introduction to APIs and REST Architecture</li>
+            <li>Building APIs with Django REST Framework</li>
+            <li>Authentication and Authorization in Django</li>
+            <li>Version Control with Git and GitHub</li>
+            <li>Introduction to Docker and Containerization</li>
+            <li>Deploying Applications to the Cloud (AWS, Heroku, etc.)</li>
+        </ul>
+    </div>
 
-                            <div class="module-item" onclick="toggleModuleContent('python-content')">
-                                Module 3: Python
-                            </div>
-                            <div id="python-content" class="module-content">
-                                <h3>Python Topics</h3>
-                                <ul>
-                                    <li>Introduction to Python Programming</li>
-                                    <li>Data Types, Variables, and Basic Operations</li>
-                                    <li>Data Structures: Lists, Tuples, Dictionaries, and Sets</li>
-                                    <li>Introduction to Pandas and NumPy</li>
-                                    <li>DataFrames: Creation, Indexing, and Slicing</li>
-                                    <li>Data Cleaning and Preprocessing</li>
-                                    <li>Aggregating and Grouping Data</li>
-                                    <li>Merging and Joining Data Sets</li>
-                                    <li>Introduction to Matplotlib and Seaborn</li>
-                                    <li>Creating Various Types of Plots</li>
-                                </ul>
-                            </div>
+    <!-- DevOps and Testing Modules -->
+    <div class="module-item" onclick="toggleModuleContent('devops-content')">
+        Module 3: DevOps and Automation
+    </div>
+    <div id="devops-content" class="module-content">
+        <h3>DevOps and Automation Topics</h3>
+        <ul>
+            <li>Introduction to CI/CD Pipelines</li>
+            <li>Continuous Integration with Jenkins/GitHub Actions</li>
+            <li>Automated Testing with PyTest and Selenium WebDriver</li>
+            <li>Backend Testing with Selenium</li>
+            <li>Integrating Unit Tests with Backend Applications</li>
+        </ul>
+    </div>
 
-                            <div class="module-item" onclick="toggleModuleContent('powerbi-content')">
-                                Module 4: Power BI
-                            </div>
-                            <div id="powerbi-content" class="module-content">
-                                <h3>Power BI Topics</h3>
-                                <ul>
-                                    <li>Overview of Power BI Interface</li>
-                                    <li>Connecting to Data Sources</li>
-                                    <li>Using Power Query Editor</li>
-                                    <li>Data Cleaning and Shaping</li>
-                                    <li>Creating and Customizing Visuals</li>
-                                    <li>Different Types of Visuals in Power BI</li>
-                                    <li>Creating Interactive Dashboards</li>
-                                    <li>Publishing and Sharing Reports</li>
-                                    <li>Introduction to DAX</li>
-                                    <li>Creating Calculated Columns and Measures</li>
-                                    <li>Using Power BI's Analytics Features</li>
-                                    <li>Implementing Advanced Data Visualization Techniques</li>
-                                </ul>
-                            </div>
+    <!-- Final Project Module -->
+    <div class="module-item" onclick="toggleModuleContent('project-content')">
+        Module 4: Capstone Project and Practical Application
+    </div>
+    <div id="project-content" class="module-content">
+        <h3>Capstone Project</h3>
+        <ul>
+            <li>Full Stack Project Development</li>
+            <li>Frontend and Backend Integration</li>
+            <li>Cloud Deployment and Scalability</li>
+            <li>Presentation and Code Review</li>
+            <li>Final Assessment and Feedback</li>
+        </ul>
+    </div>
+
+
                         </div>
-
                     </div>
                 </div>
 
@@ -355,32 +356,32 @@
                     <ul>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p class="or">Course Name:</p>
-                                <span class="or">Data Analytics</span>
+                                <p>Course Name</p>
+                                <span class="or">Fullstack Development</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p class="or">Virtual Course Fee:</p>
-                                <span class="or">N150,000</span>
+                                <p>Virtual Course Fee </p>
+                                <span>N200,000</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p class="or">Physical Course Fee:</p>
-                                <span class="or">N180,000</span>
+                                <p>Physical Course Fee </p>
+                                <span>N250,000</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p class="or">Duration:</p>
-                                <span class="or">13 Weeks</span>
+                                <p>Duration </p>
+                                <span>17 Weeks</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p class="or">Date:</p>
-                                <span class="or">7/10/2024</span>
+                                <p>Date </p>
+                                <span>7/10/2024</span>
                             </a>
                         </li>
                         <!-- <li>
@@ -391,8 +392,8 @@
                         </li> -->
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p class="or">Mode: </p>
-                                <span class="or">Physical & Virtual</span>
+                                <p>Mode </p>
+                                <span>Physical & Virtual</span>
                             </a>
                         </li>
                     </ul>
@@ -522,9 +523,8 @@
                     </div> -->
                 </div>
             </div>
-        </div> 
+        </div>
     </section>
-
     <!--================ End Course Details Area =================-->
 
     <!-- Whats App Icon -->
